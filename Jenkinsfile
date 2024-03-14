@@ -24,8 +24,7 @@ pipeline {
    }
     stage("DEPLOY & ACTIVATE") {
       steps {
-        sh """aws ecs run-task --cluster Cluster --count 1 --launch-type FARGATE --task-definition backend --network-configuration "awsvpcConfiguration={subnets=[subnet-0c8d052e4834bb21c
-],securityGroups=[sg-01c71622baffcf944],assignPublicIp=ENABLED}"
+        sh """aws ecs run-task --cluster Cluster --count 1 --launch-type FARGATE --task-definition backend_nodejs --network-configuration "awsvpcConfiguration={subnets=[subnet-subnet-071ab4f0c25ce6c7b],securityGroups=[sg-0f1f0f22dad4beb24],assignPublicIp=ENABLED}"
 """
       }
     }
